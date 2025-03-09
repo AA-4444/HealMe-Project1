@@ -22,6 +22,10 @@ export default function Home() {
 
       {/* Sidebar */}
       {/* Sidebar */}
+
+      {/* Sidebar */}
+      {/* Sidebar */}
+
       <aside className="sidebar w-64 h-screen p-6 fixed top-16 left-0">
         <hr className="border-gray-300 my-4 w-full" />
         <p className="text-2xl text-black-500 font-bold my-4">Primary Menu</p>
