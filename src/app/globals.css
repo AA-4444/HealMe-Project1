@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html, body {
+  scroll-behavior: smooth;
+}
+.react-calendar {
+  border: none !important;
+  box-shadow: none !important;
+}
