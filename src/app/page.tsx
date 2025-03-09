@@ -23,7 +23,11 @@ export default function Home() {
       {/* Sidebar */}
       <aside className="sidebar w-64 h-screen p-6 fixed top-16 left-0">
         <hr className="border-gray-300 my-4 w-full" />
+<<<<<<< HEAD
+        <p className="text-2xl text-black-500 font-bold my-4">Primary Menu</p>
+=======
         <p className="text-2xl text-gray-500 font-bold my-4">Primary Menu</p>
+>>>>>>> main
 
         <nav className="flex flex-col gap-4">
           <NavItem icon={faTachometerAlt} text="Dashboard" />
@@ -32,7 +36,11 @@ export default function Home() {
         </nav>
 
         <hr className="border-gray-300 my-4 w-full" />
+<<<<<<< HEAD
+        <p className="text-2xl text-black-500 font-bold my-4">Profile</p>
+=======
         <p className="text-2xl text-gray-500 font-bold my-4">Profile</p>
+>>>>>>> main
 
         <nav className="flex flex-col gap-4">
           <NavItem icon={faUser} text="Profile Settings" />
