@@ -42,7 +42,7 @@ export default function Home() {
       </aside>
 
       {/* Main Content (center) */}
-      <section className="flex flex-col items-center justify-center min-h-screen w-full mr-[calc(100px/2)]">
+      <section className="flex flex-col items-center justify-center min-h-screen w-full mr-[calc(100px/2)] mt-10">
         <div className="bg-[#ccc3ff] shadow-lg rounded-3xl p-10 w-[50%] mx-auto text-left">
           <h2 className="text-2xl text-black font-bold mb-4">Looking for specialist?</h2>
           <p className="text-gray-600">
@@ -67,32 +67,36 @@ export default function Home() {
           </button>
         </div>
 
-        {/* User Appointment Section */}
+  {/* User Appointment Section */}
 <section className="w-[50%] mx-auto mt-10">
   <h2 className="text-2xl text-black font-bold mb-4">My Appointment</h2>
   
   {/* List */}
-  <div className="max-h-80 overflow-y-auto space-y-4 p-2 rounded-2xl">
-    {[...Array(5)].map((_, index) => (
-      <div key={index} className="flex items-center justify-between p-4 bg-white shadow-md rounded-2xl">
-        {/* Specialist Icon */}
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 flex items-center justify-center bg-gray-300 rounded-full">
-            <FontAwesomeIcon icon={faUser} className="text-gray-600 w-6 h-6" />
-          </div>
-          {/* Specialist Data*/}
-          <div>
-            <p className="text-lg font-semibold">Dr. John Doe</p>
-            <p className="text-sm text-gray-500">Cardiologist</p>
-          </div>
+  <div className="max-h-80 overflow-y-auto space-y-4 p-4 rounded-2xl">
+  {[...Array(5)].map((_, index) => (
+  <div key={index} className="bg-white rounded-2xl p-6 w-full shadow-lg">
+    <div className="flex justify-between items-center">
+      {/* Specialist Icon */}
+      <div className="flex items-center gap-4">
+        <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full">
+          <FontAwesomeIcon icon={faUser} className="text-gray-600 w-6 h-6" />
         </div>
-        {/* Appointment Date */}
-        <div className="text-right">
-          <p className="text-sm font-semibold text-gray-700">March 15, 2025</p>
-          <p className="text-xs text-gray-500">10:30 AM</p>
+
+        {/* Specialist Data */}
+        <div>
+          <p className="text-xs font-bold text-black">Dr. John Doe</p>
+          <p className="text-sm text-gray-300">Cardiologist</p>
         </div>
       </div>
-    ))}
+
+      {/* Appointment Date */}
+      <div className="text-right">
+        <p className="text-xs font-semibold text-black">March 15, 2025</p>
+        <p className="text-xs text-gray-300">10:30 AM</p>
+      </div>
+    </div>
+  </div>
+))}
   </div>
 </section>
 
@@ -104,8 +108,8 @@ export default function Home() {
 <aside className="fixed top-20 right-10 flex flex-col items-center w-72">
   
   {/* Calendar */}
-  <div className="bg-white shadow-lg rounded-2xl p-6 w-full">
-    <div className="flex justify-between items-center mb-4">
+  <div className="bg-white shadow-xl rounded-2xl p-6 w-full">
+    <div  className="flex justify-between items-center mb-4">
       <h3 className="text-xl font-semibold text-gray-700">Calendar</h3>
       <select
         className="border border-gray-300 rounded-lg px-2 py-1 text-gray-700"
@@ -135,7 +139,7 @@ export default function Home() {
     <h1 className="text-lg font-semibold text-black mb-2">Recommended</h1>
     
     {/* Rec block */}
-    <div className="mt-4 overflow-y-auto max-h-50 space-y-4  w-full">
+    <div className="mt-4 overflow-y-auto max-h-60 space-y-4  w-full">
     {[...Array(5)].map((_, index) => (
     <div className="bg-[#432c81] rounded-2xl p-4 w-full shadow-lg">
       <div className="flex justify-between items-center">

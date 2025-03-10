@@ -2,6 +2,7 @@
 
 html, body {
   scroll-behavior: smooth;
+  overflow: hidden; /* Запрещает прокрутку всего сайта */
 }
 .react-calendar {
   border: none !important;
