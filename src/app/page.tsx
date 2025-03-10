@@ -20,11 +20,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Sidebar */}
-      {/* Sidebar */}
-
-      {/* Sidebar */}
-      {/* Sidebar */}
+      {/* Sidebar (left section)*/}
 
       <aside className="sidebar w-64 h-screen p-6 fixed top-16 left-0">
         <hr className="border-gray-300 my-4 w-full" />
@@ -45,7 +41,7 @@ export default function Home() {
         </nav>
       </aside>
 
-      {/* Main Content */}
+      {/* Main Content (center) */}
       <section className="flex flex-col items-center justify-center min-h-screen w-full mr-[calc(100px/2)]">
         <div className="bg-[#ccc3ff] shadow-lg rounded-3xl p-10 w-[50%] mx-auto text-left">
           <h2 className="text-2xl text-black font-bold mb-4">Looking for specialist?</h2>
@@ -64,43 +60,108 @@ export default function Home() {
               display: "block",
               marginLeft: "auto",
               marginRight: "auto",
+              cursor: "pointer",
             }}
           >
             BOOK NOW
           </button>
         </div>
+
+        {/* User Appointment Section */}
+<section className="w-[50%] mx-auto mt-10">
+  <h2 className="text-2xl text-black font-bold mb-4">My Appointment</h2>
+  
+  {/* List */}
+  <div className="max-h-80 overflow-y-auto space-y-4 p-2 rounded-2xl">
+    {[...Array(5)].map((_, index) => (
+      <div key={index} className="flex items-center justify-between p-4 bg-white shadow-md rounded-2xl">
+        {/* Specialist Icon */}
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 flex items-center justify-center bg-gray-300 rounded-full">
+            <FontAwesomeIcon icon={faUser} className="text-gray-600 w-6 h-6" />
+          </div>
+          {/* Specialist Data*/}
+          <div>
+            <p className="text-lg font-semibold">Dr. John Doe</p>
+            <p className="text-sm text-gray-500">Cardiologist</p>
+          </div>
+        </div>
+        {/* Appointment Date */}
+        <div className="text-right">
+          <p className="text-sm font-semibold text-gray-700">March 15, 2025</p>
+          <p className="text-xs text-gray-500">10:30 AM</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
       </section>
 
-      {/* Calendar */}
-      <aside className="fixed top-20 right-10 bg-white shadow-lg rounded-2xl p-6 w-72">
-        {/* header and date choice */}
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-semibold text-gray-700">Calendar</h3>
-          <select
-            className="border border-gray-300 rounded-lg px-2 py-1 text-gray-700"
-            value={selectedYear}
-            onChange={(e) => setSelectedYear(Number(e.target.value))}
-          >
-            {Array.from({ length: 5 }, (_, i) => {
-              const year = new Date().getFullYear() - 2 + i;
-              return (
-                <option key={year} value={year}>
-                  {year}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-
-        {/* Calendar */}
       
-<Calendar
-  value={date}
-  onChange={(value) => setDate(value as Date)} 
-  className="w-full rounded-lg border border-gray-200 shadow-sm"
-/>
 
-      </aside>
+      {/* Calendar (right section) */}
+<aside className="fixed top-20 right-10 flex flex-col items-center w-72">
+  
+  {/* Calendar */}
+  <div className="bg-white shadow-lg rounded-2xl p-6 w-full">
+    <div className="flex justify-between items-center mb-4">
+      <h3 className="text-xl font-semibold text-gray-700">Calendar</h3>
+      <select
+        className="border border-gray-300 rounded-lg px-2 py-1 text-gray-700"
+        value={selectedYear}
+        onChange={(e) => setSelectedYear(Number(e.target.value))}
+      >
+        {Array.from({ length: 5 }, (_, i) => {
+          const year = new Date().getFullYear() - 2 + i;
+          return (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+    
+    <Calendar
+      value={date}
+      onChange={(value) => setDate(value as Date)}
+      className="w-full rounded-lg border border-gray-200 shadow-sm"
+    />
+  </div>
+
+ 
+  <div className="mt-4 space-y-4  w-full"> {/* Margin between blocks */}
+    <h1 className="text-lg font-semibold text-black mb-2">Recommended</h1>
+    
+    {/* Rec block */}
+    <div className="mt-4 overflow-y-auto max-h-50 space-y-4  w-full">
+    {[...Array(5)].map((_, index) => (
+    <div className="bg-[#432c81] rounded-2xl p-4 w-full shadow-lg">
+      <div className="flex justify-between items-center">
+      
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full">
+            <FontAwesomeIcon icon={faUser} className="text-gray-600 w-6 h-6" />
+          </div>
+        
+          <div>
+            <p className="text-xs font-semibold text-white">Dr. John Doe</p>
+            <p className="text-sm text-gray-300">Cardiologist</p>
+          </div>
+        </div>
+        
+        <div className="text-right">
+          <p className="text-xs font-semibold text-white">March 15, 2025</p>
+          <p className="text-xs text-gray-300">10:30 AM</p>
+        </div>
+      </div>
+    </div>
+    ))}
+    </div>
+  </div>
+</aside>
+
     </main>
   );
 }
@@ -117,3 +178,5 @@ function NavItem({ icon, text }: { icon: any; text: string }) {
     </a>
   );
 }
+
+
